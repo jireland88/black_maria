@@ -55,7 +55,6 @@ class Table(object):
             lower_bound = int((52/self.num_players)*i)
             upper_bound = int((52/self.num_players)*(i+1))
             self.players[i].hand = self.deck[lower_bound:upper_bound]
-            # display hand function
 
     def play_trick(self, inital_player_pos):
         for player in self.players:
@@ -94,6 +93,7 @@ class Table(object):
             trick_starter = self.play_trick(trick_starter)
 
     def play_match(self):
+        print("-----NEW MATCH-----")
         self.play_round("C", 0)
         self.play_round("D", 1)
         self.play_round("H", 2)
@@ -104,4 +104,8 @@ class Table(object):
         for player in self.players:
             print("Player " + str(player.table_pos) + " scored " + str(player.get_score()))
 
-        return self.players[0].get_score()
+        scores = []
+        for player in self.players:
+            scores.append(player.get_score())
+
+        return scores
