@@ -1,6 +1,6 @@
 from random import randint
 
-class Player(object)
+class Player(object):
     def __init__(self, table_pos):
         self.table_pos = table_pos
         self.hand = []
