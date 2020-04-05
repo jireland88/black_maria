@@ -26,7 +26,7 @@ for i in scores:
 #print("mean score: " + str(np.mean(scores)))
 #print("std score: " + str(np.std(scores)))
 
-ax1, ax2 = plt.subplots(ncols=4)
+axs = plt.subplots(ncols=4)
 
 sns.distplot(player0scores, ax=axs[0])
 sns.distplot(player1scores, ax=axs[1])
